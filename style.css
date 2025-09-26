@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Poppins:wght@300;400;600;700&display=swap');
 
 /* Reset básico */
 * {
@@ -22,15 +22,16 @@ main {
     padding: 20px;
 }
 
+/* Tipografia */
 h1, h2, h3 {
-    /* Italiana para todos os títulos */
     font-family: 'Italiana', serif; 
     margin-bottom: 20px;
+    color: #591919;
 }
 
-/* Estilos do Menu de Navegação */
+/* Estilos do Menu de Navegação (Desktop) */
 .navbar {
-    background-color: #591919; /* Fundo escuro da sua paleta */
+    background-color: #591919; 
     color: #F2DCDC;
     padding: 1rem 0;
     position: fixed;
@@ -54,40 +55,44 @@ h1, h2, h3 {
 }
 
 .navbar .logo img {
-    height: 40px; /* Altura ideal para o menu */
-    width: auto; /* Mantém a proporção da imagem */
+    height: 40px; 
+    width: auto; 
 }
 
-@media (max-width: 768px) {
-    .navbar .logo img {
-        height: 30px; /* Reduz a altura para economizar espaço */
-    }
-}
-
-.navbar ul {
-    font-family: "Italiana", sans-serif;
- font-weight: 400;
-  font-style: normal;
+/* Links do Menu (Desktop) - CORREÇÃO PRINCIPAL AQUI: usando .nav-links */
+.navbar ul.nav-links { 
     list-style: none;
-    display: flex;
+    display: flex; /* GARANTE QUE APARECE NO DESKTOP */
     align-items: center;
-    gap: 30px; /* Adiciona espaço entre os itens do menu */
+    gap: 30px; 
+    font-weight: 400;
 }
 
-.navbar ul li a {
+.navbar ul.nav-links li a {
     color: #F2DCDC; 
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600; 
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
-.navbar ul li a i {
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
+.navbar ul.nav-links li a i {
+    margin-right: 8px; 
 }
 
-.navbar ul li a:hover {
+.navbar ul.nav-links li a:hover {
     color: #F24444; /* Cor de hover */
+}
+
+/* Botão Hamburguer (ESCONDIDO no Desktop) */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #F2DCDC; 
+    cursor: pointer;
+    z-index: 1001; 
 }
 
 
@@ -101,133 +106,200 @@ section {
 /* Seção Início (Hero) */
 .hero {
     background-color: #CDD9BA; 
-    /* Mudamos para Flexbox para alinhar os dois blocos (texto e imagem) */
     display: flex; 
-    justify-content: space-around; /* Espaço entre o conteúdo e a imagem */
+    justify-content: space-around; 
     align-items: center;
-    padding: 100px 20px;
-    height: 100vh; /* Mantém a altura da tela */
-    text-align: left; /* Alinha o texto à esquerda dentro de hero */
+    padding: 150px 20px 50px 20px; 
+    height: 100vh;
+    text-align: left; 
 }
 
 .hero-content {
-    /* Define o tamanho da coluna de texto (ex: 50% da largura total) */
     max-width: 500px;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 10px;
-    color: #591919;
 }
 
 .hero h2 {
     font-size: 1.5rem;
-    color: #F24444; /* Cor de destaque */
+    color: #F24444; 
 }
 
 .hero-image img {
-    /* Estilo para a imagem: ajuste o tamanho aqui */
     width: 350px; 
     height: 350px;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    border-radius: 50%; /* Opcional: para deixar a foto redonda, como na maioria dos portfólios */
-    border: 5px solid #F28080; /* Opcional: Borda de destaque */
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 5px solid #F28080; 
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Botões CTA e Download */
 .cta-button, .download-button {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #F24444; /* Fundo do Botão: Vermelho Intenso */
-    color: #fff; /* Texto: Branco puro para contraste */
+    padding: 18px 35px;
+    background-color: #F24444; 
+    color: #fff; 
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(242, 68, 68, 0.4); 
 }
 
 .cta-button:hover, .download-button:hover {
-    background-color: #591919; /* Hover do Botão: Vermelho Escuro/Bordô */
-}
-
-/* REGRAS PARA O LAYOUT EM CELULARES/TABLETS */
-@media (max-width: 900px) {
-    .hero {
-        flex-direction: column; /* Em telas pequenas, empilha o texto em cima da imagem */
-        height: auto;
-        padding-top: 150px; /* Adiciona espaço no topo por causa do menu fixo */
-    }
-
-    .hero-image {
-        order: -1; /* Coloca a imagem no topo quando o layout é empilhado */
-        margin-bottom: 40px;
-    }
-
-    .hero-image img {
-        width: 250px;
-        height: 250px;
-    }
-
-    .hero-content {
-        max-width: 100%;
-        text-align: center;
-    }
+    background-color: #591919; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 15px rgba(89, 25, 25, 0.4);
 }
 
 /* Seção Sobre Mim */
 .sobre-mim {
-    background-color: #F2DCDC; /* Fundo Secundário: Creme/Branco Quente */
+    background-color: #F2DCDC; 
+}
+
+.sobre-mim .resumo {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+}
+
+.sobre-mim .resumo p {
+    max-width: 750px; 
+    margin: 0 auto 40px auto; 
+    font-size: 1.1rem; 
+    line-height: 1.8; 
+}
+
+.sobre-mim h3 {
+    margin-top: 60px; 
+    margin-bottom: 30px; 
+}
+
+/* Tags de Habilidades (Badges) */
+.habilidades {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px; 
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .habilidades span {
     display: inline-block;
-    background-color: #F28080; /* Cor de Destaque/Badge: Rosa Suave */
-    color: #591919; /* Cor do texto da badge */
-    padding: 8px 15px;
-    border-radius: 20px;
-    margin: 5px;
+    background-color: #F24444; 
+    color: #fff; 
+    padding: 10px 18px; 
+    border-radius: 5px; 
+    margin: 5px 0; 
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 600; 
+    transition: all 0.3s ease; 
+}
+
+.habilidades span:hover {
+    background-color: #591919; 
+    color: #fff; 
+    transform: translateY(-3px) scale(1.05); 
+    box-shadow: 0 5px 10px rgba(89, 25, 25, 0.3);
 }
 
 /* Seção Projetos */
 .projetos {
-    background-color: #CDD9BA; /* Fundo: Verde/Creme Suave */
+    background-color: #CDD9BA; 
+    padding: 80px 20px;
+}
+
+.galeria-projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+    margin-top: 40px;
 }
 
 .card-projeto {
-    background-color: #F2DCDC; /* Fundo do Card: Creme/Branco Quente */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(89, 25, 25, 0.1);
+    background-color: #F2DCDC; 
+    padding: 0; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(89, 25, 25, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; 
+}
+
+.card-projeto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(89, 25, 25, 0.25); 
+}
+
+.card-projeto img {
+    width: 100%;
+    height: 220px; 
+    object-fit: cover;
+    display: block;
+}
+
+.card-projeto h3, .card-projeto p {
+    padding: 0 20px; 
+}
+
+.card-projeto h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.card-projeto p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
 }
 
 .card-projeto a {
-    margin: 0 10px;
-    color: #F24444; /* Links internos no Card: Vermelho Intenso */
+    color: #F24444; 
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(89, 25, 25, 0.1);
 }
 
 .card-projeto a:hover {
+    background-color: rgba(89, 25, 25, 0.05);
     color: #591919;
 }
 
-/* Seção Currículo */
+
+/* Seção Currículo (Download) */
 .curriculo-download {
-    background-color: #F2DCDC; /* Fundo: Creme/Branco Quente */
+    background-color: #F2DCDC; 
+    padding: 100px 20px;
 }
+
+.curriculo-download h2 {
+    font-size: 2.5rem; 
+    margin-bottom: 25px;
+}
+
+.curriculo-download p {
+    max-width: 600px;
+    margin: 0 auto 40px auto; 
+    font-size: 1.1rem;
+}
+
 
 /* Seção Contato */
 .contato {
-    background-color: #CDD9BA; /* Fundo: Verde/Creme Suave */
+    background-color: #CDD9BA; 
 }
 
 .links-contato a {
-    color: #F24444; /* Links de Contato: Vermelho Intenso */
+    color: #F24444; 
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
@@ -241,6 +313,83 @@ section {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #591919; /* Fundo Escuro: Vermelho Escuro/Bordô */
-    color: #F2DCDC; /* Texto: Creme/Branco Quente para contraste */
+    background-color: #591919; 
+    color: #F2DCDC; 
+}
+
+/* ==================================== */
+/* MEDIA QUERIES (MOBILE) */
+/* ==================================== */
+@media (max-width: 850px) { 
+
+    /* MENU HAMBURGUER (aparece) */
+    .menu-toggle {
+    display: block; 
+    z-index: 1002; /* Garante que o ícone do hamburguer esteja ACIMA de tudo */
+    position: relative;
+    /* Ajuste de margem se estiver grudado na lateral */
+    margin-right: 0; 
+    }
+
+    .navbar ul.nav-links {
+    position: fixed; 
+    top: 0; /* Começa exatamente no topo da tela */
+    right: -100%; 
+    z-index: 1000; /* Um pouco abaixo do botão toggle */
+    right: -100%; 
+    width: 100%; 
+    height: 100vh;
+    background-color: #591919; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 100px;
+    z-index: 999; 
+    transition: right 0.3s ease-in-out; 
+    }
+    
+    .navbar nav {
+    /* Mantenha o botão hamburguer e o logo separados em telas pequenas */
+    justify-content: space-between; 
+    } 
+
+    /* Estado Ativo do Menu Mobile - CORREÇÃO AQUI */
+    .navbar ul.nav-links.active { 
+        right: 0; 
+    }
+
+    .navbar ul li {
+        margin: 15px 0;
+    }
+    
+    /* HERO (ajusta layout para vertical) */
+    .hero {
+        flex-direction: column; 
+        height: auto;
+        padding-top: 150px; 
+    }
+
+    .hero-image {
+        order: -1; 
+        margin-bottom: 40px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    /* Outras seções */
+    section {
+        min-height: auto;
+    }
 }
