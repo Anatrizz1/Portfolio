@@ -8,7 +8,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: #CDD9BA; /* Fundo principal: Verde/Creme Suave */
     color: #591919; /* Cor principal do texto: Vermelho Escuro */
@@ -20,6 +20,12 @@ main {
     max-width: 1100px;
     margin: 0 auto;
     padding: 20px;
+}
+
+h1, h2, h3 {
+    /* Italiana para todos os títulos */
+    font-family: 'Italiana', serif; 
+    margin-bottom: 20px;
 }
 
 /* Estilos do Menu de Navegação */
@@ -69,7 +75,7 @@ main {
 }
 
 .navbar ul li a {
-    color: #F2DCDC; /* Cor do texto e ícone */
+    color: #F2DCDC; 
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
@@ -94,16 +100,40 @@ section {
 
 /* Seção Início (Hero) */
 .hero {
-    background-color: #CDD9BA; /* Fundo principal: Verde/Creme Suave */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: #CDD9BA; 
+    /* Mudamos para Flexbox para alinhar os dois blocos (texto e imagem) */
+    display: flex; 
+    justify-content: space-around; /* Espaço entre o conteúdo e a imagem */
     align-items: center;
-    height: 100vh;
+    padding: 100px 20px;
+    height: 100vh; /* Mantém a altura da tela */
+    text-align: left; /* Alinha o texto à esquerda dentro de hero */
+}
+
+.hero-content {
+    /* Define o tamanho da coluna de texto (ex: 50% da largura total) */
+    max-width: 500px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #591919;
 }
 
 .hero h2 {
-    color: #F24444; /* Destaque no título secundário: Vermelho Intenso */
+    font-size: 1.5rem;
+    color: #F24444; /* Cor de destaque */
+}
+
+.hero-image img {
+    /* Estilo para a imagem: ajuste o tamanho aqui */
+    width: 350px; 
+    height: 350px;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 50%; /* Opcional: para deixar a foto redonda, como na maioria dos portfólios */
+    border: 5px solid #F28080; /* Opcional: Borda de destaque */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Botões CTA e Download */
@@ -121,6 +151,30 @@ section {
 
 .cta-button:hover, .download-button:hover {
     background-color: #591919; /* Hover do Botão: Vermelho Escuro/Bordô */
+}
+
+/* REGRAS PARA O LAYOUT EM CELULARES/TABLETS */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column; /* Em telas pequenas, empilha o texto em cima da imagem */
+        height: auto;
+        padding-top: 150px; /* Adiciona espaço no topo por causa do menu fixo */
+    }
+
+    .hero-image {
+        order: -1; /* Coloca a imagem no topo quando o layout é empilhado */
+        margin-bottom: 40px;
+    }
+
+    .hero-image img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
 }
 
 /* Seção Sobre Mim */
