@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #CDD9BA; /* Fundo principal: Verde/Creme Suave */
+    color: #591919; /* Cor principal do texto: Vermelho Escuro */
+    scroll-behavior: smooth; 
+}
+
+/* Container principal para centralizar o conteúdo */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Estilos do Menu de Navegação */
+.navbar {
+    background-color: #591919; /* Fundo escuro da sua paleta */
+    color: #F2DCDC;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.navbar nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar .logo {
+    font-weight: bold;
+    color: #F24444; 
+}
+
+.navbar .logo img {
+    height: 40px; /* Altura ideal para o menu */
+    width: auto; /* Mantém a proporção da imagem */
+}
+
+@media (max-width: 768px) {
+    .navbar .logo img {
+        height: 30px; /* Reduz a altura para economizar espaço */
+    }
+}
+
+.navbar ul {
+    font-family: "Italiana", sans-serif;
+ font-weight: 400;
+  font-style: normal;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Adiciona espaço entre os itens do menu */
+}
+
+.navbar ul li a {
+    color: #F2DCDC; /* Cor do texto e ícone */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a i {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+}
+
+.navbar ul li a:hover {
+    color: #F24444; /* Cor de hover */
+}
+
+
+/* Estilos para as Seções */
+section {
+    padding: 100px 0;
+    text-align: center;
+    min-height: 100vh; 
+}
+
+/* Seção Início (Hero) */
+.hero {
+    background-color: #CDD9BA; /* Fundo principal: Verde/Creme Suave */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.hero h2 {
+    color: #F24444; /* Destaque no título secundário: Vermelho Intenso */
+}
+
+/* Botões CTA e Download */
+.cta-button, .download-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #F24444; /* Fundo do Botão: Vermelho Intenso */
+    color: #fff; /* Texto: Branco puro para contraste */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover, .download-button:hover {
+    background-color: #591919; /* Hover do Botão: Vermelho Escuro/Bordô */
+}
+
+/* Seção Sobre Mim */
+.sobre-mim {
+    background-color: #F2DCDC; /* Fundo Secundário: Creme/Branco Quente */
+}
+
+.habilidades span {
+    display: inline-block;
+    background-color: #F28080; /* Cor de Destaque/Badge: Rosa Suave */
+    color: #591919; /* Cor do texto da badge */
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Seção Projetos */
+.projetos {
+    background-color: #CDD9BA; /* Fundo: Verde/Creme Suave */
+}
+
+.card-projeto {
+    background-color: #F2DCDC; /* Fundo do Card: Creme/Branco Quente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(89, 25, 25, 0.1);
+}
+
+.card-projeto a {
+    margin: 0 10px;
+    color: #F24444; /* Links internos no Card: Vermelho Intenso */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-projeto a:hover {
+    color: #591919;
+}
+
+/* Seção Currículo */
+.curriculo-download {
+    background-color: #F2DCDC; /* Fundo: Creme/Branco Quente */
+}
+
+/* Seção Contato */
+.contato {
+    background-color: #CDD9BA; /* Fundo: Verde/Creme Suave */
+}
+
+.links-contato a {
+    color: #F24444; /* Links de Contato: Vermelho Intenso */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.links-contato a:hover {
+    color: #591919;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #591919; /* Fundo Escuro: Vermelho Escuro/Bordô */
+    color: #F2DCDC; /* Texto: Creme/Branco Quente para contraste */
+}
