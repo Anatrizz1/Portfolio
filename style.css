@@ -10,8 +10,8 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #CDD9BA; /* Fundo principal: Verde/Creme Suave */
-    color: #591919; /* Cor principal do texto: Vermelho Escuro */
+    background-color: #CDD9BA; 
+    color: #591919; 
     scroll-behavior: smooth; 
 }
 
@@ -59,10 +59,10 @@ h1, h2, h3 {
     width: auto; 
 }
 
-/* Links do Menu (Desktop) - CORREÇÃO PRINCIPAL AQUI: usando .nav-links */
+
 .navbar ul.nav-links { 
     list-style: none;
-    display: flex; /* GARANTE QUE APARECE NO DESKTOP */
+    display: flex; 
     align-items: center;
     gap: 30px; 
     font-weight: 400;
@@ -208,17 +208,16 @@ section {
 }
 
 .habilidades span {
-    /* MANTÉM O ESTILO FORTE E COM CONTRASTE */
-    background-color: #F24444; /* Fundo: Vermelho Intenso */
-    color: #fff; /* Texto: Branco */
+
+    background-color: #F24444; 
+    color: #fff; 
     padding: 10px 18px; 
-    border-radius: 25px; /* Estilo pílula */
+    border-radius: 25px; 
     font-weight: 600; 
     transition: all 0.3s ease; 
-    border: none; /* Garante que não tenha borda */
+    border: none;
 }
 
-/* Tags de Habilidades SECUNDÁRIAS (Foco: Leveza / Conhecimento Básico) */
 .habilidades-secundarias {
     display: flex; 
     flex-wrap: wrap; 
@@ -230,18 +229,17 @@ section {
 
 .habilidades-secundarias span {
     display: inline-block;
-    background-color: #F2DCDC; /* Fundo Suave: Creme/Branco Quente */
-    color: #591919; /* Texto Escuro: Bordô */
-    border: 1px solid #F28080; /* Contorno: Rosa Suave */
+    background-color: #F2DCDC; 
+    color: #591919; 
+    border: 1px solid #F28080; 
     padding: 8px 16px; 
-    border-radius: 20px; /* Estilo pílula */
+    border-radius: 20px; 
     font-weight: 500;
     transition: all 0.3s ease; 
 }
 
-/* Hover Unificado para ambas as categorias (opcional: podem ter hovers diferentes) */
 .habilidades span:hover, .habilidades-secundarias span:hover {
-    background-color: #591919; /* Hover: Bordô Escuro */
+    background-color: #591919; 
     color: #fff;
     border-color: #591919;
     transform: translateY(-3px) scale(1.05); 
