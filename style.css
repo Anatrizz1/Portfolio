@@ -74,6 +74,8 @@ h1, h2, h3 {
     font-weight: 600; 
     font-size: 1rem;
     transition: color 0.3s ease;
+    position: relative; /* Essencial para a linha */
+    text-decoration: none;
 }
 
 .navbar ul.nav-links li a i {
@@ -82,6 +84,21 @@ h1, h2, h3 {
 
 .navbar ul.nav-links li a:hover {
     color: #F24444; /* Cor de hover */
+}
+
+.navbar ul.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0; /* Começa com 0 */
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #F24444;
+    transition: width 0.3s ease-out; /* Anima a largura */
+}
+
+.navbar ul.nav-links li a:hover::after {
+    width: 100%; /* Vai para 100% no hover */
 }
 
 /* Botão Hamburguer (ESCONDIDO no Desktop) */
@@ -354,6 +371,11 @@ footer {
     padding: 20px;
     background-color: #591919; 
     color: #F2DCDC; 
+}
+
+.cta-button, .download-button, .habilidades span, 
+.card-projeto a, .links-contato a, .menu-toggle {
+    cursor: pointer;
 }
 
 /* ==================================== */
