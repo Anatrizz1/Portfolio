@@ -340,10 +340,12 @@ section {
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .links-contato a:hover {
     color: #591919;
+    transition: color 0.3s ease;
 }
 
 /* Rodapé */
